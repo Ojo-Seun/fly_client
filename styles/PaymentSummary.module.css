@@ -1,0 +1,19 @@
+
+
+.cartSummary {
+    background-color: white;
+    padding: 1rem;
+    height: 50vh;
+}
+
+.summaryDetails div:not(.purchaseBtn) {
+    margin: 2rem 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.purchaseBtn {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+}

@@ -1,0 +1,64 @@
+
+
+
+.paymentPage{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+
+.formWrapper {
+    margin-top: 3rem;
+    width: 30vw;
+    height: 60vh;
+    border-radius: 1rem;
+}
+
+
+.form {
+    width: 80%;
+    margin: auto;
+}
+
+.paymentMethod{
+    padding: 1rem;
+}
+
+.paymentMethod > div{
+    width: 20%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.paymentMethod > div label{
+    width: 60%;
+    font-weight: bold;
+}
+
+.paymentMethod > div input{
+    cursor: pointer;
+}
+
+.submitBtn {
+    text-align: center;
+    padding: 1rem;
+}
+
+.submitBtn button {
+    outline: none;
+    border: 2px solid blue;
+    padding: .8rem 2rem;
+    border-radius: .5rem;
+    cursor: pointer;
+    color: blue;
+}
+
+.submitBtn button:hover {
+    border: 2px solid red;
+    color: red;
+    background-color: black;
+}

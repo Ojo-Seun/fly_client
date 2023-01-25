@@ -1,0 +1,136 @@
+
+
+
+.productPage{
+    width: 100%;
+    background-color: whitesmoke;
+}
+
+
+
+.grid{
+    padding: 2rem 3rem;
+    display: grid;
+    grid-template-columns: 40% 40% 20%;
+}
+
+.item1{
+    height: 60vh;
+}
+ .productImage{
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+ .smallImageContainer{
+    height: 20%;
+    overflow: hidden;
+    padding: 1rem 0;
+}
+.img{
+    width: 120px;
+    height: 120px;
+}
+.img img{
+    border-radius: .5rem;
+    cursor: pointer;
+    object-fit:cover;
+    
+}
+.img:hover{
+    border: 2px solid red;
+    border-radius: 1rem;
+}
+.smallImages{
+    display: flex;
+    justify-content: space-around;
+}
+ .productImage img{
+    border-radius: .5rem;
+    object-fit: fill;
+    
+}
+.item2 {
+    color: red;
+    height: 50vh;
+    padding: .5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.rating{
+    display: flex;
+    gap:1rem;
+}
+
+.qtyBtn button{
+    padding: .5rem .8rem;
+    border-radius: .5rem;
+    cursor: pointer;
+    background-color: var(--secondaryColor);
+    color: red;
+    margin-right: .5rem;
+    font-size: 1rem;
+    outline: none;
+    border: none;
+    transition: color .5s;
+}
+
+.qtyBtn button:hover{
+    background-color: white;
+}
+
+.qtyBtn span{
+    color:black;
+    font-size: 1.5rem;
+    margin-right: .5rem;
+}
+.productName{
+    color: black;
+}
+
+.item3 {
+    height: 50vh;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: white;
+}
+.productPrice,.shipping,.productTotal,.productQty,.subTotal{
+    display: flex;
+    justify-content: space-between;
+    color:black
+}
+
+.item3 > div div{
+    margin: 1rem 0;
+}
+
+.item3 div span{
+    color:red
+}
+
+.item4 {
+    padding-top: 1rem;
+    color: black;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    height: 40vh;
+}
+.specs{
+    list-style: none;
+}
+
+
+
+
+@media (max-width:650px) {
+    .productPage{
+        background-color: red;
+    }
+    .grid{
+        display: block;
+    }
+}

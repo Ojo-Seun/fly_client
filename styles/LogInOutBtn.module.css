@@ -1,0 +1,18 @@
+
+
+.logInOutBtn{
+    outline: none;
+    border: 2px solid #2495ed;
+    border-radius: .5rem;
+    padding: .8rem 1rem;
+    background-color: white;
+    cursor: pointer;
+    color:#2495ed;
+    font-weight: bold;
+}
+
+.logInOutBtn:hover{
+    border: 3px solid red;
+    background-color: black;
+    color: red;
+}

@@ -1,0 +1,125 @@
+
+.registerPage{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    background-color: gray;
+    
+}
+
+
+
+.formWrapper{
+    margin-top: 3rem;
+    width: 30vw;
+    max-height: 80vh;
+    background-color: white;
+    border-radius: 1rem;
+}
+
+.registerIcon{
+    width: 2rem;
+    height: 2rem;
+    margin: 1rem auto;
+}
+
+.registerLinks{
+    color: black;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.registerLinks a{
+    margin: 1rem;
+    padding: .5rem 0;
+}
+
+.registerLinks .active{
+    border-bottom: 3px solid red;
+}
+
+.form{
+    width: 80%;
+    margin: auto;
+}
+
+.form div:not(.submitBtn){
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: .5rem;
+    position: relative;
+}
+
+.form div label{
+    font-weight: bold;
+}
+
+.form div input{
+    padding: 1rem;
+    border-radius: .5rem;
+    outline: none;
+    border: none;
+    background-color: rgb(200, 200, 200)
+
+}
+
+.visibility{
+    display: block;
+    position: absolute;
+    right: 1rem;
+    top:50%;
+    cursor: pointer;
+}
+
+
+
+
+.form div pre{
+    color: red;
+    text-align: center;
+    font-weight: bold;
+    display: none;
+    padding: .5rem;
+}
+
+.submitBtn{
+    text-align: center;
+    padding: 1rem;
+}
+
+.submitBtn button{
+    outline: none;
+    border: 2px solid blue;
+    padding: .8rem 1rem;
+    border-radius: .5rem;
+    cursor: pointer;
+    color:blue;
+}
+
+.submitBtn button:hover{
+   border: 2px solid red;
+    color: red;
+    background-color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+@media  (max-width:900px){
+    .formWrapper{
+        width:80vw
+    }
+    
+    .form div pre{
+        font-size: .6rem;
+    }
+}

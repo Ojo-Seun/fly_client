@@ -1,0 +1,25 @@
+
+
+
+
+.button{
+    outline: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+    background-color: blue;
+    padding: 1rem 1.5rem;
+    border-radius: 1rem;
+    transition: all 0.5s;
+    font-weight: bold;
+}
+
+.fw{
+    width:90%
+}
+
+.button:hover{
+    background-color: yellow;
+    color: black;
+    width:88%
+}
