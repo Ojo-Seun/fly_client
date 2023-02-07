@@ -128,7 +128,6 @@
 
 @media (max-width:650px) {
     .productPage{
-        background-color: red;
     }
     .grid{
         display: block;

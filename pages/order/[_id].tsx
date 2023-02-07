@@ -57,7 +57,6 @@ function Order({ params }: any) {
       }
     })
       .then(res => {
-        console.log(res.data)
       setData({loading:false,error:"",orderDetails:res.data})
     })
       .catch(err => {

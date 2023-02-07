@@ -23,7 +23,6 @@ function ProductScreen({ product }: productType) {
   const { slug } = router.query;
   const { state, dispatch } = useContext(Store);
   const { cartItems } = state.cart;
-  console.log(product);
 
   const handleMouseOver = (e: any) => {
     const target = e.target;
@@ -213,10 +212,7 @@ function ProductScreen({ product }: productType) {
     </Layout>
   );
 }
-export default dynamic(() => Promise.resolve(ProductScreen), {
-  ssr: false,
-  loading: () => <LoadingIndicator />,
-});
+export default ProductScreen
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { slug } = context.query;

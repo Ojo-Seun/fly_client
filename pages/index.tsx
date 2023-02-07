@@ -1,6 +1,6 @@
 import type { GetServerSideProps, NextPage } from "next";
 import { useRouter } from "next/router";
-import { Fragment, useEffect } from "react";
+import { Fragment, useEffect, useState } from "react";
 import Layout from "../components/Layout";
 import { productsType } from "../typeScriptTypes";
 import ProductModel from "../models/products.schema";
@@ -8,24 +8,25 @@ import db from "../utils/db";
 
 import dynamic from "next/dynamic";
 import LoadingIndicator from "../components/LoadingIndicator";
-import ProductList from "../components/ProductList";
+import QuadcopterList from "../components/QuadcopterList";
+import FixedWing from "../components/FixedWing";
 
 const Home: NextPage<productsType> = ({ products }: productsType) => {
+  const [rederFixedWingDrones, setRederFixedWingDrones] = useState(false);
   const router = useRouter();
+
   useEffect(() => {
-    const card2 = document.getElementsByClassName("reveal")[0];
-
-    const reveal = () => {
-      const revealPoint = 100;
-      const winHeight = window.innerHeight;
-      if (revealPoint < winHeight - card2.getBoundingClientRect().top) {
-        card2.classList.add("active");
-      } else {
-        card2.classList.remove("active");
+    
+    const render = () => {
+      if (window.scrollY > 200) {
+        setRederFixedWingDrones(true)
       }
-    };
+    }
 
-    window.addEventListener("scroll", reveal);
+    window.addEventListener("scroll", render)
+    return () => {
+      window.removeEventListener("scroll", render)
+    }
   }, []);
 
   return (
@@ -34,25 +35,23 @@ const Home: NextPage<productsType> = ({ products }: productsType) => {
         {products.length === 0 ? (
           <div>Error In Connection Please Try To Refresh</div>
         ) : (
-          <Fragment>
-            <ProductList products={products} />
-          </Fragment>
+          <>
+            <QuadcopterList products={products} />
+            {rederFixedWingDrones && <FixedWing />}
+          </>
         )}
       </div>
     </Layout>
   );
 };
 
-export default dynamic(() => Promise.resolve(Home), {
-  ssr: false,
-  loading: () => <LoadingIndicator />,
-});
+export default Home
 
 export const getServerSideProps: GetServerSideProps = async (cx) => {
   db.connect();
 
   try {
-    const res = await ProductModel.find({}).lean();
+    const res = await ProductModel.find({category:"quadcopter"}).lean();
     const products = res.map((doc) => db.convertDocToObj(doc));
 
     return {

@@ -2,6 +2,7 @@
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
+  overflow: hidden;
   
 }
 
@@ -11,9 +12,8 @@ html,
 body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-    background-color: black;
-    overflow-x: hidden;
-    overflow-y: auto;
+  overflow-y: auto;
+
 }
 
 
@@ -34,11 +34,12 @@ a {
 }
 
 .loadingContainer{
-  width: 100%;
-  height: 3rem;
+  width: 100vw;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: azure;
   
 }
 
@@ -57,61 +58,41 @@ a {
 /*HOME PAGE*/
 
 .homePage {
-  width: 100%;
-  padding: 0 10%;
+  transition: all .5s;
+}
+.section{
+  margin: 2rem auto;
+  width: 80%;
 }
 
 
-.cards1 {
-  padding-top: 4rem;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-.cards2 {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  margin-top: 5rem;
-  margin: 10rem 0;
-  transition: all 1s;
-  padding-bottom: 10rem;
-  flex-wrap: wrap;
-}
-.card2Title{
-  width: 40%;
-  margin: auto;
-  text-align: center;
-  transform: translateY(5rem);
-}
-.reveal {
-  transform: translateY(100px);
-  opacity: 0;
+.cardWrapper {
   
+  border-radius: 1rem;
+  margin-top: 1rem;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  box-shadow:inset -5px -10px 2px whitesmoke,inset 5px 10px 2px rgba(0, 0, 0, 0.5);
 }
 
-.active {
-  transform: translateY(0px);
-  opacity: 1;
-}
+
 
 .card {
-  width: 30%;
-  height: 30%;
-  background-color: rgba(232, 31, 31, 0.2);
+  width: 25%;
+  height: 25%;
   padding: 0.5rem;
   border-radius: 1rem;
-  transform: translateY(10rem);
   transition: all 0.5s;
-  box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.5),-1px -1px 2px 2px rgba(0, 0, 0, 0.5);
+  box-shadow:inset 1px 1px 2px 2px rgba(0, 0, 0, 0.5),-1px -1px 2px 2px rgba(0, 0, 0, 0.5);
   
 }
 
 .card:hover {
   cursor: pointer;
-  width: 28%;
-  height: 28%;
+  width: 24%;
+  height: 24%;
 
 }
 
@@ -126,16 +107,13 @@ a {
 }
 
 .productName{
-  color: whitesmoke;
+  color: gray;
 }
 .card img {
   border-radius: 1rem;
   object-fit: fill;
 }
 
-.centerCard {
-  transform: translateY(0rem);
-}
 
 
 
@@ -150,23 +128,22 @@ a {
 @media  (max-width:650px) {
 
   html,body{
-    overflow: auto;
+    min-width: 800px;
+  }
+
+
+  .cardWrapper{
+    width: 600px;
+    overflow-x: auto;
   }
 
     .card {
-      max-width: 30%;
-      transform: translateY(0px);
-      margin-top: 1rem;
-  
+      width: 150px;
+      height: 150px;
     }
 
-    .cards2{
-      margin: 5rem 0;
-    }
-        .card2Title {
-          font-size: 1rem;
-          transform: translateY(0px);
-        }
+    
+
     .price{
       font-size: 1rem;
     }
